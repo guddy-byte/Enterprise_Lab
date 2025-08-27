@@ -17,7 +17,6 @@ import {
   Phone,
   MapPin,
   ChevronDown,
-  Play,
   Star,
   CheckCircle,
 } from "lucide-react"
@@ -42,11 +41,12 @@ export default function EnterpriseLab() {
           <div className="flex justify-between items-center h-15 pt-4">
             <div className="flex items-center space-x-2">
               <Image
-                src="/logo_1.jpg"
+                src="/bg-remove_logo.png"
                 alt="Enterprise Lab Logo"
                 width={250}     
                 height={60} 
                 className="object-contain"
+                onClick={() => scrollToSection("home")}
                 priority
               />
             </div>
@@ -81,7 +81,7 @@ export default function EnterpriseLab() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden cursor-pointer">
         {/* Background Gradient Layer */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#089302]/15 via-[#350c8c]/10 to-[#e2211b]/15" />
         
@@ -143,7 +143,7 @@ export default function EnterpriseLab() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+      <section id="about" className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 cursor-pointer">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 slide-up">
             <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-slate-800 to-blue-800 bg-clip-text text-transparent mb-4">
@@ -154,14 +154,14 @@ export default function EnterpriseLab() {
               the knowledge, tools, and funding access needed for sustainable growth.
             </p>
           </div>
-
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div className="slide-up">
-              <div className="aspect-video bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg flex items-center justify-center mb-4 border border-blue-200">
-                <div className="text-center">
-                  <Play className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-                  <p className="text-slate-600">Company Introduction Video</p>
-                </div>
+              <div className="aspect-video rounded-lg overflow-hidden border border-blue-200 mb-4">
+                <video 
+                  src="/about_us.mp4" 
+                  controls 
+                  className="w-full h-full object-cover">
+                </video>
               </div>
             </div>
             <div className="slide-up">
@@ -263,7 +263,7 @@ export default function EnterpriseLab() {
                 title: "Financial Literacy & Advisory",
                 description:
                   "Training entrepreneurs in budgeting, savings, credit management, and financial planning with tailored SME financial advisory.",
-                image: "/financial-planning-and-budgeting-workshop.png",
+                image: "/image_1.jpg",
                 color: "text-emerald-600",
                 bg: "bg-emerald-50",
                 border: "border-emerald-200",
@@ -273,7 +273,7 @@ export default function EnterpriseLab() {
                 title: "Enterprise Development",
                 description:
                   "Business strategy design, capacity-building workshops, mentorship, and policy advocacy for SME growth.",
-                image: "/business-strategy-meeting-with-entrepreneurs.png",
+                image: "/enterprise_development.jpg",
                 color: "text-blue-600",
                 bg: "bg-blue-50",
                 border: "border-blue-200",
@@ -283,7 +283,7 @@ export default function EnterpriseLab() {
                 title: "SME Support Services",
                 description:
                   "Business diagnostics, formalization and compliance guidance, and comprehensive market access support.",
-                image: "/small-business-support-and-consulting.png",
+                image: "/image_2.jpg",
                 color: "text-purple-600",
                 bg: "bg-purple-50",
                 border: "border-purple-200",
@@ -293,7 +293,7 @@ export default function EnterpriseLab() {
                 title: "Investment Readiness & Matchmaking",
                 description:
                   "Preparing SMEs for investor engagement, pitch coaching, and curating SME-funder matchmaking platforms.",
-                image: "/investor-pitch-presentation-and-funding.png",
+                image: "/image_3.jpg",
                 color: "text-orange-600",
                 bg: "bg-orange-50",
                 border: "border-orange-200",
@@ -303,7 +303,7 @@ export default function EnterpriseLab() {
                 title: "Innovation Accelerator",
                 description:
                   "Startup incubation, innovation bootcamps, and accelerator programs with tailored curricula for scaling.",
-                image: "/startup-incubator-and-innovation-hub.png",
+                image: "/innovator.jpg",
                 color: "text-yellow-600",
                 bg: "bg-yellow-50",
                 border: "border-yellow-200",
@@ -313,7 +313,7 @@ export default function EnterpriseLab() {
                 title: "Stakeholder Engagement",
                 description:
                   "Connecting with development agencies, financial institutions, government, and private sector partners.",
-                image: "/business-networking-and-partnership-meeting.png",
+                image: "/stackholder.jpg",
                 color: "text-pink-600",
                 bg: "bg-pink-50",
                 border: "border-pink-200",
@@ -337,11 +337,11 @@ export default function EnterpriseLab() {
                   <CardDescription className="text-slate-600 leading-relaxed">{service.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="bg-white">
-                  <Button
-                    className={`w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white`}
+                <Button
+                    className="w-full bg-[#350c8c] hover:bg-[#2b0a70] text-white shadow-md transition-all"
                   >
-                    Learn More
-                  </Button>
+                    Learn More
+                </Button>
                 </CardContent>
               </Card>
             ))}
@@ -504,7 +504,7 @@ export default function EnterpriseLab() {
                     className="border-slate-300 focus:border-blue-500"
                   />
                 </div>
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg">
+                <Button className="w-full bg-[#350c8c] hover:bg-[#2b0a70] text-white shadow-md transition-all">
                   Send Message
                 </Button>
               </CardContent>
