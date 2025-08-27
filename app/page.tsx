@@ -81,7 +81,7 @@ export default function EnterpriseLab() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden cursor-pointer">
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden cursor-pointer pt-10">
         {/* Background Gradient Layer */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#089302]/15 via-[#350c8c]/10 to-[#e2211b]/15" />
         

@@ -1,22 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@font-face {
-  font-family: 'Satoshi';
-    src: url('/Enterprise_Lab/fonts/Satoshi/Satoshi-Regular.woff2') format('woff2'),
-        url('/Enterprise_Lab/fonts/Satoshi/Satoshi-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Satoshi';
-    src: url('/Enterprise_Lab/fonts/Satoshi/Satoshi-Bold.woff2') format('woff2'),
-        url('/Enterprise_Lab/fonts/Satoshi/Satoshi-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+@custom-variant dark (&:is(.dark *));
 
 :root {
   /* Updated color tokens to match Enterprise Lab Consulting design brief */
@@ -90,8 +75,8 @@
   --sidebar-ring: oklch(0.646 0.222 264.376 / 0.5);
 }
 
-/* Updated font variables to use Satoshi font and color variables for theme */
-:root {
+@theme inline {
+  /* Updated font variables to use Satoshi font */
   --font-sans: var(--font-satoshi);
   --font-mono: var(--font-satoshi);
   --color-background: var(--background);
@@ -132,20 +117,12 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-/* Add more weights/styles as needed */
-
-:root {
-  --font-satoshi: 'Satoshi', sans-serif;
-}
-
 @layer base {
   * {
-    border-color: var(--border);
-    outline-color: color-mix(in oklab, var(--ring) 50%, transparent);
+    @apply border-border outline-ring/50;
   }
   body {
-    background-color: var(--background);
-    color: var(--foreground);
+    @apply bg-background text-foreground;
   }
 
   /* Added smooth scrolling for better transitions */
