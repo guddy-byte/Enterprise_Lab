@@ -41,7 +41,7 @@ export default function EnterpriseLab() {
           <div className="flex justify-between items-center h-15 pt-4">
             <div className="flex items-center space-x-2">
               <Image
-                src="/bg-remove_logo.png"
+                src="/Enterprise_Lab/bg-remove_logo.png"
                 alt="Enterprise Lab Logo"
                 width={250}     
                 height={60} 
@@ -87,7 +87,7 @@ export default function EnterpriseLab() {
         
         {/* Background Image Layer */}
         <div className="absolute inset-0">
-          <div className="w-full h-full bg-[url('/modern-business-office-in-lagos-nigeria-with-entre.png')] bg-cover bg-center opacity-30" />
+          <div className="w-full h-full bg-[url('/Enterprise_Lab/modern-business-office-in-lagos-nigeria-with-entre.png')] bg-cover bg-center opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-white/30" />
         </div>
 
