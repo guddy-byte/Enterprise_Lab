@@ -21,6 +21,7 @@ import {
   Star,
   CheckCircle,
 } from "lucide-react"
+import Image from "next/image"
 
 export default function EnterpriseLab() {
   const [isVisible, setIsVisible] = useState(false)
@@ -36,14 +37,18 @@ export default function EnterpriseLab() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-blue-100 z-50 shadow-sm">
+      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-blue-100 z-50 shadow-sm p-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-15 pt-4">
             <div className="flex items-center space-x-2">
-              <Building2 className="h-8 w-8 text-blue-600" />
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Enterprise Lab
-              </span>
+              <Image
+                src="/logo_1.jpg"
+                alt="Enterprise Lab Logo"
+                width={250}     
+                height={60} 
+                className="object-contain"
+                priority
+              />
             </div>
             <div className="hidden md:flex space-x-8">
               <button
@@ -72,45 +77,58 @@ export default function EnterpriseLab() {
               </button>
             </div>
           </div>
-        </div>
+        </div>
       </nav>
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-500/5 to-emerald-500/10" />
+        {/* Background Gradient Layer */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#089302]/15 via-[#350c8c]/10 to-[#e2211b]/15" />
+        
+        {/* Background Image Layer */}
         <div className="absolute inset-0">
           <div className="w-full h-full bg-[url('/modern-business-office-in-lagos-nigeria-with-entre.png')] bg-cover bg-center opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-white/30" />
         </div>
 
+        {/* Content */}
         <div
-          className={`relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 ${isVisible ? "fade-in" : "opacity-0"}`}
+          className={`relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 ${
+            isVisible ? "fade-in" : "opacity-0"
+          }`}
         >
-          <Badge className="mb-6 text-sm font-medium bg-gradient-to-r from-blue-500 to-purple-500 text-white border-0">
+          {/* Badge */}
+          <Badge className="mb-6 text-sm font-medium bg-gradient-to-r from-[#089302] via-[#350c8c] to-[#e2211b] text-white border-0 shadow-md">
             Established 2014 • Lagos, Nigeria
           </Badge>
+
+          {/* Heading */}
           <h1 className="text-4xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight">
             Empowering{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#089302] via-[#350c8c] to-[#e2211b] bg-clip-text text-transparent">
               African Entrepreneurs
             </span>{" "}
             to Scale
           </h1>
+
+          {/* Description */}
           <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
             Leading enterprise solutions partner delivering high-impact consulting services that build financially
             literate entrepreneurs and accelerate SME growth across Africa.
           </p>
+
+          {/* Buttons - neutral style */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg"
+              className="bg-slate-800 text-white hover:bg-slate-700 shadow-md transition-all"
               onClick={() => scrollToSection("services")}
             >
               Explore Our Services
             </Button>
             <Button
               size="lg"
-              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all"
+              className="bg-slate-800 text-white hover:bg-slate-700 shadow-md transition-all"
               onClick={() => scrollToSection("about")}
             >
               Learn More About Us
@@ -118,8 +136,9 @@ export default function EnterpriseLab() {
           </div>
         </div>
 
+        {/* Scroll Icon */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="h-6 w-6 text-blue-600" />
+          <ChevronDown className="h-6 w-6 text-[#089302]" />
         </div>
       </section>
 
@@ -495,15 +514,22 @@ export default function EnterpriseLab() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-slate-800 to-blue-800 text-white py-12">
+      <footer className="bg-gradient-to-r from-slate-800 via-[#3901b2] to-[#089302] text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <Building2 className="h-8 w-8 text-blue-300" />
-              <span className="text-2xl font-bold">Enterprise Lab Consulting</span>
-            </div>
-            <p className="text-blue-200 mb-4">Empowering African entrepreneurs since 2014</p>
-            <p className="text-sm text-blue-300">© 2024 Enterprise Lab Consulting. All rights reserved.</p>
+          <div className="flex flex-col items-center justify-center text-center space-y-4">
+            {/* Logo */}
+            <Image
+              src="/bg-remove_logo.png"
+              alt="Enterprise Lab Logo"
+              width={250}
+              height={60}
+              className="object-contain"
+              priority
+            />
+
+
+            {/* Copyright */}
+            <p className="text-sm text-blue-300">© 2025 Enterprise Lab Consulting. All rights reserved.</p>
           </div>
         </div>
       </footer>
