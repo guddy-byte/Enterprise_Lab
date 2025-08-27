@@ -1,14 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
-}
+  // 👇 add this so Next.js knows your repo folder on GitHub Pages
+  basePath: '/Enterprise_Lab',
+  assetPrefix: '/Enterprise_Lab/',
 
-export default nextConfig
+  // 👇 needed if you’re doing next export
+  output: 'export',
+};
+
+export default nextConfig;
