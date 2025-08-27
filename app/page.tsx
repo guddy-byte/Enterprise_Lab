@@ -158,7 +158,7 @@ export default function EnterpriseLab() {
             <div className="slide-up">
               <div className="aspect-video rounded-lg overflow-hidden border border-blue-200 mb-4">
                 <video 
-                  src="/about_us.mp4" 
+                  src="/Enterprise_Lab/about_us.mp4" 
                   controls 
                   className="w-full h-full object-cover">
                 </video>
@@ -263,7 +263,7 @@ export default function EnterpriseLab() {
                 title: "Financial Literacy & Advisory",
                 description:
                   "Training entrepreneurs in budgeting, savings, credit management, and financial planning with tailored SME financial advisory.",
-                image: "/image_1.jpg",
+                image: "/Enterprise_Lab/image_1.jpg",
                 color: "text-emerald-600",
                 bg: "bg-emerald-50",
                 border: "border-emerald-200",
@@ -273,7 +273,7 @@ export default function EnterpriseLab() {
                 title: "Enterprise Development",
                 description:
                   "Business strategy design, capacity-building workshops, mentorship, and policy advocacy for SME growth.",
-                image: "/enterprise_development.jpg",
+                image: "/Enterprise_Lab/enterprise_development.jpg",
                 color: "text-blue-600",
                 bg: "bg-blue-50",
                 border: "border-blue-200",
@@ -283,7 +283,7 @@ export default function EnterpriseLab() {
                 title: "SME Support Services",
                 description:
                   "Business diagnostics, formalization and compliance guidance, and comprehensive market access support.",
-                image: "/image_2.jpg",
+                image: "/Enterprise_Lab/image_2.jpg",
                 color: "text-purple-600",
                 bg: "bg-purple-50",
                 border: "border-purple-200",
@@ -293,7 +293,7 @@ export default function EnterpriseLab() {
                 title: "Investment Readiness & Matchmaking",
                 description:
                   "Preparing SMEs for investor engagement, pitch coaching, and curating SME-funder matchmaking platforms.",
-                image: "/image_3.jpg",
+                image: "/Enterprise_Lab/image_3.jpg",
                 color: "text-orange-600",
                 bg: "bg-orange-50",
                 border: "border-orange-200",
@@ -303,7 +303,7 @@ export default function EnterpriseLab() {
                 title: "Innovation Accelerator",
                 description:
                   "Startup incubation, innovation bootcamps, and accelerator programs with tailored curricula for scaling.",
-                image: "/innovator.jpg",
+                image: "/Enterprise_Lab/innovator.jpg",
                 color: "text-yellow-600",
                 bg: "bg-yellow-50",
                 border: "border-yellow-200",
@@ -313,7 +313,7 @@ export default function EnterpriseLab() {
                 title: "Stakeholder Engagement",
                 description:
                   "Connecting with development agencies, financial institutions, government, and private sector partners.",
-                image: "/stackholder.jpg",
+                image: "/Enterprise_Lab/stackholder.jpg",
                 color: "text-pink-600",
                 bg: "bg-pink-50",
                 border: "border-pink-200",
@@ -366,7 +366,7 @@ export default function EnterpriseLab() {
               {
                 name: "Adebayo Ogundimu",
                 role: "CEO, TechStart Lagos",
-                image: "/african-businessman-portrait.png",
+                image: "/Enterprise_Lab/african-businessman-portrait.png",
                 quote:
                   "Enterprise Lab transformed our financial management approach. Their investment readiness program helped us secure $500K in funding.",
                 color: "border-emerald-200 bg-emerald-50",
@@ -374,7 +374,7 @@ export default function EnterpriseLab() {
               {
                 name: "Fatima Mohammed",
                 role: "Founder, AgriConnect",
-                image: "/professional-african-businesswoman-portrait.png",
+                image: "/Enterprise_Lab/professional-african-businesswoman-portrait.png",
                 quote:
                   "The enterprise development workshops gave us the strategic framework we needed to expand across three states in Nigeria.",
                 color: "border-blue-200 bg-blue-50",
@@ -382,7 +382,7 @@ export default function EnterpriseLab() {
               {
                 name: "Chidi Okwu",
                 role: "Director, EduTech Solutions",
-                image: "/professional-african-entrepreneur-portrait.png",
+                image: "/Enterprise_Lab/professional-african-entrepreneur-portrait.png",
                 quote:
                   "Their innovation accelerator program was instrumental in helping us scale from 10 to 500+ users in just 6 months.",
                 color: "border-purple-200 bg-purple-50",
@@ -519,7 +519,7 @@ export default function EnterpriseLab() {
           <div className="flex flex-col items-center justify-center text-center space-y-4">
             {/* Logo */}
             <Image
-              src="/bg-remove_logo.png"
+              src="/Enterprise_Lab/bg-remove_logo.png"
               alt="Enterprise Lab Logo"
               width={250}
               height={60}
