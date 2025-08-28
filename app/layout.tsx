@@ -14,7 +14,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        <header className="w-full flex items-center justify-center py-4">
+          <img
+            src="/Enterprise_Lab/logo_1.jpg"
+            alt="Enterprise Lab Logo"
+            className="h-12 w-auto"
+          />
+        </header>
+        {children}</body>
     </html>
   )
 }
