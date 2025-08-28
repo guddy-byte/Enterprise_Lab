@@ -109,8 +109,7 @@ export default function EnterpriseLab() {
 
           {/* Description */}
           <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Leading enterprise solutions partner delivering high-impact consulting services that build financially
-            literate entrepreneurs and accelerate SME growth across Africa.
+            Empowering entrepreneurs with financial literacy and consulting to accelerate SME growth across Africa
           </p>
 
           {/* Buttons - neutral style */}
@@ -336,6 +335,7 @@ export default function EnterpriseLab() {
                 <CardContent className={service.bg}>
                 <Button
                     className="w-full bg-[#350c8c] hover:bg-[#2b0a70] text-white shadow-md transition-all"
+                    onClick={() => scrollToSection("contact")}
                   >
                     Learn More
                 </Button>
@@ -463,14 +463,14 @@ export default function EnterpriseLab() {
               </div>
             </div>
 
-            <Card className="slide-up border-blue-200 shadow-lg bg-blue-200">
+            <Card className="slide-up border-blue-200 shadow-lgbbg-blue-50">
               <CardHeader>
                 <CardTitle className="text-slate-800">Send us a message</CardTitle>
                 <CardDescription className="text-slate-600">
                   Fill out the form below and we'll get back to you within 24 hours.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4 bg-blue-200">
+              <CardContent className="space-y-4 bg-blue-50">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium text-slate-700 mb-2 block">First Name</label>
