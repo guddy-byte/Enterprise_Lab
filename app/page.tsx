@@ -463,8 +463,8 @@ export default function EnterpriseLab() {
               </div>
             </div>
 
-            <Card className="slide-up border-blue-200 shadow-lg">
-              <CardHeader className="bg-gradient-to-r from-blue-50 to-purple-50">
+            <Card className="slide-up border-blue-200 shadow-lg bg-blue-200">
+              <CardHeader>
                 <CardTitle className="text-slate-800">Send us a message</CardTitle>
                 <CardDescription className="text-slate-600">
                   Fill out the form below and we'll get back to you within 24 hours.
