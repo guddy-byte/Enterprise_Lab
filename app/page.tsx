@@ -470,7 +470,7 @@ export default function EnterpriseLab() {
                   Fill out the form below and we'll get back to you within 24 hours.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4 bg-white">
+              <CardContent className="space-y-4 bg-blue-200">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium text-slate-700 mb-2 block">First Name</label>
