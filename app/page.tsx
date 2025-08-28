@@ -98,17 +98,13 @@ export default function EnterpriseLab() {
           }`}
         >
           {/* Badge */}
-          <Badge className="mb-6 text-sm font-medium bg-gradient-to-r from-[#089302] via-[#350c8c] to-[#e2211b] text-white border-0 shadow-md">
+          <Badge className="mb-6 text-sm font-medium bg-slate-800 text-white border-0 shadow-md">
             Established 2014 • Lagos, Nigeria
           </Badge>
 
           {/* Heading */}
           <h1 className="text-4xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight">
-            Empowering{" "}
-            <span className="bg-gradient-to-r from-[#089302] via-[#350c8c] to-[#e2211b] bg-clip-text text-transparent">
-              African Entrepreneurs
-            </span>{" "}
-            to Scale
+            Empowering  African Entrepreneurs to Scale 
           </h1>
 
           {/* Description */}
@@ -514,7 +510,7 @@ export default function EnterpriseLab() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-slate-800 via-[#3901b2] to-[#089302] text-white py-12">
+      <footer className="bg-slate-800 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-center text-center space-y-4">
             {/* Logo */}
@@ -527,9 +523,10 @@ export default function EnterpriseLab() {
               priority
             />
 
-
             {/* Copyright */}
-            <p className="text-sm text-blue-300">© 2025 Enterprise Lab Consulting. All rights reserved.</p>
+            <p className="text-sm text-blue-300">
+              © 2025 Enterprise Lab Consulting. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
