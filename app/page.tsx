@@ -155,6 +155,7 @@ export default function EnterpriseLab() {
               <div className="aspect-video rounded-lg overflow-hidden border border-blue-200 mb-4">
                 <video 
                   src="/Enterprise_Lab/about_us.mp4" 
+                  poster="/Enterprise_Lab/image_1.jpg"
                   controls 
                   className="w-full h-full object-cover">
                 </video>
@@ -317,7 +318,7 @@ export default function EnterpriseLab() {
             ].map((service, index) => (
               <Card
                 key={index}
-                className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-2 slide-up border ${service.border} overflow-hidden`}
+                className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-2 slide-up border ${service.border} ${service.bg} overflow-hidden`}
               >
                 <div className="aspect-video bg-slate-100 overflow-hidden">
                   <div
