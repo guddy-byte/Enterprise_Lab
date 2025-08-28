@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
+import Image from "next/image"
 
 export const metadata: Metadata = {
   title: "Enterprise Lab Consulting",
@@ -16,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans">
         <header className="w-full flex items-center justify-center py-4">
-          <img
+          <Image
             src="/Enterprise_Lab/logo_1.jpg"
             alt="Enterprise Lab Logo"
             className="h-12 w-auto"
