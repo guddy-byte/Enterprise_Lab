@@ -335,7 +335,7 @@ export default function EnterpriseLab() {
                 </CardHeader>
                 <CardContent className="bg-white">
                 <Button
-                    className="w-full bg-[#350c8c] hover:bg-[#2b0a70] text-white shadow-md transition-all"
+                    className="w-full ${service.bg}  hover:brightness-95 text-white shadow-md transition-all"
                   >
                     Learn More
                 </Button>
