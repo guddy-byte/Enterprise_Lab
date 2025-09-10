@@ -440,14 +440,14 @@ export default function EnterpriseLab() {
                   <Mail className="h-6 w-6 text-emerald-600" />
                   <div>
                     <h4 className="font-semibold text-slate-800">Email</h4>
-                    <p className="text-slate-600">info@enterpriselab.ng</p>
+                    <p className="text-slate-600">info@elabconsult.com</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4 p-4 bg-purple-50 rounded-lg border border-purple-200">
                   <Phone className="h-6 w-6 text-purple-600" />
                   <div>
                     <h4 className="font-semibold text-slate-800">Phone</h4>
-                    <p className="text-slate-600">+234 (0) 123 456 7890</p>
+                    <p className="text-slate-600">+234 811 337 1111</p>
                   </div>
                 </div>
               </div>
@@ -470,40 +470,88 @@ export default function EnterpriseLab() {
                   Fill out the form below and we'll get back to you within 24 hours.
                 </CardDescription>
               </CardHeader>
+
               <CardContent className="space-y-4 bg-blue-50">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm font-medium text-slate-700 mb-2 block">First Name</label>
-                    <Input placeholder="Enter your first name" className="border-slate-300 focus:border-blue-500" />
+                <form
+                  onSubmit={async (e) => {
+                    e.preventDefault();
+                    const formData = new FormData(e.currentTarget);
+                    const payload = Object.fromEntries(formData.entries());
+
+                    const res = await fetch('/api/contact', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify(payload),
+                    });
+
+                    const data = await res.json();
+                    if (data.success) {
+                      alert('✅ Message sent successfully!');
+                      e.currentTarget.reset();
+                    } else {
+                      alert('❌ Failed to send message. Please try again.');
+                    }
+                  }}
+                >
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-sm font-medium text-slate-700 mb-2 block">First Name</label>
+                      <Input
+                        name="firstName"
+                        placeholder="Enter your first name"
+                        className="border-slate-300 focus:border-blue-500"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-slate-700 mb-2 block">Last Name</label>
+                      <Input
+                        name="lastName"
+                        placeholder="Enter your last name"
+                        className="border-slate-300 focus:border-blue-500"
+                        required
+                      />
+                    </div>
                   </div>
+
                   <div>
-                    <label className="text-sm font-medium text-slate-700 mb-2 block">Last Name</label>
-                    <Input placeholder="Enter your last name" className="border-slate-300 focus:border-blue-500" />
+                    <label className="text-sm font-medium text-slate-700 mb-2 block">Email</label>
+                    <Input
+                      type="email"
+                      name="email"
+                      placeholder="Enter your email address"
+                      className="border-slate-300 focus:border-blue-500"
+                      required
+                    />
                   </div>
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-slate-700 mb-2 block">Email</label>
-                  <Input
-                    type="email"
-                    placeholder="Enter your email address"
-                    className="border-slate-300 focus:border-blue-500"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-slate-700 mb-2 block">Company</label>
-                  <Input placeholder="Enter your company name" className="border-slate-300 focus:border-blue-500" />
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-slate-700 mb-2 block">Message</label>
-                  <Textarea
-                    placeholder="Tell us about your business needs..."
-                    rows={4}
-                    className="border-slate-300 focus:border-blue-500"
-                  />
-                </div>
-                <Button className="w-full bg-[#350c8c] hover:bg-[#2b0a70] text-white shadow-md transition-all">
-                  Send Message
-                </Button>
+
+                  <div>
+                    <label className="text-sm font-medium text-slate-700 mb-2 block">Company</label>
+                    <Input
+                      name="company"
+                      placeholder="Enter your company name"
+                      className="border-slate-300 focus:border-blue-500"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-medium text-slate-700 mb-2 block">Message</label>
+                    <Textarea
+                      name="message"
+                      placeholder="Tell us about your business needs..."
+                      rows={4}
+                      className="border-slate-300 focus:border-blue-500"
+                      required
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    className="w-full bg-[#350c8c] hover:bg-[#2b0a70] text-white shadow-md transition-all"
+                  >
+                    Send Message
+                  </Button>
+                </form>
               </CardContent>
             </Card>
           </div>

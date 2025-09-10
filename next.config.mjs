@@ -1,9 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // 👇 add this so Next.js knows your repo folder on GitHub Pages
+  // GitHub Pages needs these
   basePath: '/Enterprise_Lab',
   assetPrefix: '/Enterprise_Lab',
   output: 'export',
+
+  // Fix Image Optimization error
+  images: {
+    unoptimized: true,
+  },
 };
 
-export default nextConfig;
+export default nextConfig;
