@@ -16,7 +16,7 @@ export async function POST(request: Request) {
 
   await transporter.sendMail({
     from: '"Enterprise Lab Website" <no-reply@elabconsult.com>',
-    to: 'info@elabconsult.com', // <-- This is the recipient
+    to: ['info@elabconsult.com', 'idowugudness@gmail.com'],
     subject: 'New Contact Form Submission',
     text: `
       Name: ${firstName} ${lastName}
