@@ -415,148 +415,62 @@ export default function EnterpriseLab() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 slide-up">
             <h2 className="text-3xl md:text-4xl font-bold text-[#1a3787] mb-4">
               Get In Touch
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Ready to transform your business? Let's discuss how we can help you achieve your goals.
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Ready to transform your business? Reach out to us today — we’d love to hear from you.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="slide-up">
-              <h3 className="text-2xl font-bold text-slate-800 mb-6">Contact Information</h3>
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                  <MapPin className="h-6 w-6 text-blue-600" />
-                  <div>
-                    <h4 className="font-semibold text-slate-800">Headquarters</h4>
-                    <p className="text-slate-600">Lagos, Nigeria</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-4 p-4 bg-emerald-50 rounded-lg border border-emerald-200">
-                  <Mail className="h-6 w-6 text-emerald-600" />
-                  <div>
-                    <h4 className="font-semibold text-slate-800">Email</h4>
-                    <p className="text-slate-600">info@elabconsult.com</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-4 p-4 bg-purple-50 rounded-lg border border-purple-200">
-                  <Phone className="h-6 w-6 text-purple-600" />
-                  <div>
-                    <h4 className="font-semibold text-slate-800">Phone</h4>
-                    <p className="text-slate-600">+234 811 337 1111</p>
-                  </div>
+          {/* Contact Information */}
+          <div className="space-y-6 slide-up">
+            <h3 className="text-2xl font-bold text-slate-800 mb-6 text-center">
+              Contact Information
+            </h3>
+
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="flex items-center space-x-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <MapPin className="h-6 w-6 text-blue-600" />
+                <div>
+                  <h4 className="font-semibold text-slate-800">Headquarters</h4>
+                  <p className="text-slate-600">Lagos, Nigeria</p>
                 </div>
               </div>
-
-              <div className="mt-8 p-6 bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg border border-blue-200">
-                <h4 className="font-semibold text-slate-800 mb-4">Our Clients & Stakeholders</h4>
-                <div className="text-slate-600 space-y-2">
-                  <p>• SMEs & entrepreneurs across Nigeria and Africa</p>
-                  <p>• Development agencies and donors</p>
-                  <p>• Financial institutions and investors</p>
-                  <p>• Government and private sector actors</p>
+              <div className="flex items-center space-x-4 p-4 bg-emerald-50 rounded-lg border border-emerald-200">
+                <Mail className="h-6 w-6 text-emerald-600" />
+                <div>
+                  <h4 className="font-semibold text-slate-800">Email</h4>
+                  <p className="text-slate-600">info@elabconsult.com</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4 p-4 bg-purple-50 rounded-lg border border-purple-200 sm:col-span-2">
+                <Phone className="h-6 w-6 text-purple-600" />
+                <div>
+                  <h4 className="font-semibold text-slate-800">Phone</h4>
+                  <p className="text-slate-600">+234 811 337 1111</p>
                 </div>
               </div>
             </div>
 
-            <Card className="slide-up border-blue-200 shadow-lgbbg-blue-50">
-              <CardHeader>
-                <CardTitle className="text-slate-800">Send us a message</CardTitle>
-                <CardDescription className="text-slate-600">
-                  Fill out the form below and we'll get back to you within 24 hours.
-                </CardDescription>
-              </CardHeader>
-
-              <CardContent className="space-y-4 bg-blue-50">
-                <form
-                  onSubmit={async (e) => {
-                    e.preventDefault();
-                    const formData = new FormData(e.currentTarget);
-                    const payload = Object.fromEntries(formData.entries());
-
-                    const res = await fetch('/api/contact', {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify(payload),
-                    });
-
-                    const data = await res.json();
-                    if (data.success) {
-                      alert('✅ Message sent successfully!');
-                      e.currentTarget.reset();
-                    } else {
-                      alert('❌ Failed to send message. Please try again.');
-                    }
-                  }}
-                >
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-sm font-medium text-slate-700 mb-2 block">First Name</label>
-                      <Input
-                        name="firstName"
-                        placeholder="Enter your first name"
-                        className="border-slate-300 focus:border-blue-500"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium text-slate-700 mb-2 block">Last Name</label>
-                      <Input
-                        name="lastName"
-                        placeholder="Enter your last name"
-                        className="border-slate-300 focus:border-blue-500"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="text-sm font-medium text-slate-700 mb-2 block">Email</label>
-                    <Input
-                      type="email"
-                      name="email"
-                      placeholder="Enter your email address"
-                      className="border-slate-300 focus:border-blue-500"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="text-sm font-medium text-slate-700 mb-2 block">Company</label>
-                    <Input
-                      name="company"
-                      placeholder="Enter your company name"
-                      className="border-slate-300 focus:border-blue-500"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="text-sm font-medium text-slate-700 mb-2 block">Message</label>
-                    <Textarea
-                      name="message"
-                      placeholder="Tell us about your business needs..."
-                      rows={4}
-                      className="border-slate-300 focus:border-blue-500"
-                      required
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    className="w-full bg-[#350c8c] hover:bg-[#2b0a70] text-white shadow-md transition-all"
-                  >
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+            {/* Clients & Stakeholders */}
+            <div className="mt-10 p-6 bg-gradient-to-br from-slate-50 to-blue-50 rounded-lg border border-blue-200 text-center">
+              <h4 className="font-semibold text-slate-800 mb-4">
+                Our Clients & Stakeholders
+              </h4>
+              <div className="text-slate-600 space-y-2">
+                <p>• SMEs & entrepreneurs across Nigeria and Africa</p>
+                <p>• Development agencies and donors</p>
+                <p>• Financial institutions and investors</p>
+                <p>• Government and private sector actors</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* Footer */}
       <footer className="bg-slate-800 text-white py-12">
